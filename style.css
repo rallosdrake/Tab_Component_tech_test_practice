@@ -1,0 +1,118 @@
+.background {
+  background-image: radial-gradient(red 10%, transparent 10%),
+    radial-gradient(blue 10%, transparent 10%);
+  background-color: #fff;
+  background-position: 0 0, 50px 50px;
+  background-size: 50px 50px;
+}
+.app {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab_component {
+  background-color: #fff;
+  width: 70vw;
+  border: solid red;
+  box-shadow: 5px 10px red;
+}
+
+input {
+  display: none;
+} /* hide radio buttons */
+input + label {
+  display: inline-block;
+} /* show labels in line */
+input ~ .tab {
+  display: none;
+} /* hide contents */
+/* show contents only for selected tab */
+#tab1:checked ~ .tab.content1,
+#tab2:checked ~ .tab.content2,
+#tab3:checked ~ .tab.content3,
+#tab4:checked ~ .tab.content4,
+#tab5:checked ~ .tab.content5 {
+  display: block;
+}
+input + label {
+  /* box with rounded corner */
+  box-shadow: 2px 0px red;
+  border: solid red;
+  background: #eee;
+  padding: 4px 12px;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+
+  color: red;
+}
+input:checked + label {
+  /* white background for selected tab */
+  background: #fff;
+  border-bottom: 1px solid transparent;
+}
+input ~ .tab {
+  /* grey line between tab and contents */
+  border-top: 1px solid red;
+  padding: 12px;
+}
+
+.tab {
+  display: flex;
+  align-self: flex-start;
+  color: red;
+}
+
+/* ///////////////////////Animation///////////////////////////////// */
+.fade-in {
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
